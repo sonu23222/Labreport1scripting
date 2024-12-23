@@ -1,28 +1,28 @@
 <?php
-// Database connection details
+
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "crud_db";
 
-// Create connection
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// SQL query to fetch all records from users table
+
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
 
-// Check if query is successful
+
 if (!$result) {
     die("Query failed: " . $conn->error);
 }
 
-// Display data in table format
+
 echo "<h2>Users Table</h2>";
 echo "<table border='1' cellspacing='0' cellpadding='10'>";
 echo "<tr>
@@ -57,6 +57,6 @@ if ($result->num_rows > 0) {
 
 echo "</table>";
 
-// Close the connection
+
 $conn->close();
 ?>
